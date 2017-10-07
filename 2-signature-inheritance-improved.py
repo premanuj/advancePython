@@ -40,5 +40,5 @@ class Integer(Type):
 
 class Person(Base):
     sig = make_signature('name age'.split())
-    name = String('name')
-    age = Integer('age')
+    name = String()
+    age = Integer()
