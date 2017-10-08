@@ -32,6 +32,7 @@ class String(Type):
 class Integer(Type):
     ty = int
 
+#here is the core part to know
 class CustomType(type):
     '''Type subclass'''
     def __new__(cls, clsname, bases, clsdict):
@@ -41,6 +42,7 @@ class CustomType(type):
             clsdict['sig'] = sig
         return super().__new__(cls, clsname, bases, clsdict)
 
+#and we used it here which gives us a concept of meta programming
 class Base(metaclass=CustomType):
     fields = []
     def __init__(self, *args, **kwagrs):
